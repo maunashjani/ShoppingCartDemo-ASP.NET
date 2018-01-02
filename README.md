@@ -7,62 +7,59 @@ CREATE DATABASE [ShoppingCartDB]
 Tables:
 
 1.	Products
-CREATE TABLE [dbo].[Products](  
-    [ProductID] [int] IDENTITY(1,1) NOT NULL,  
-    [ProductName] [nvarchar](50) NULL,  
-    [Price] [decimal](18, 2) NULL,  
-    [ProductImage] [nvarchar](max) NULL,  
- CONSTRAINT [PK_Products] PRIMARY KEY CLUSTERED   
-(  
-    [ProductID] ASC  
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]  
-GO 
+    CREATE TABLE [dbo].[Products](  
+        [ProductID] [int] IDENTITY(1,1) NOT NULL,  
+        [ProductName] [nvarchar](50) NULL,  
+        [Price] [decimal](18, 2) NULL,  
+        [ProductImage] [nvarchar](max) NULL,  
+     CONSTRAINT [PK_Products] PRIMARY KEY CLUSTERED   
+    (  
+        [ProductID] ASC  
+    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
+    ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]  
+    GO 
  
 2.	Orders
+    CREATE TABLE [dbo].[Orders](  
+        [OrderID] [int] IDENTITY(1,1) NOT NULL,  
+        [CustomerID] [int] NULL,  
+        [OrderDateTime] [datetime] NULL,  
+        [TotalAmount] [decimal](18, 2) NULL,  
+     CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED   
+    (  
+        [OrderID] ASC  
+    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
+    ) ON [PRIMARY]  
+    GO  
 
-CREATE TABLE [dbo].[Orders](  
-    [OrderID] [int] IDENTITY(1,1) NOT NULL,  
-    [CustomerID] [int] NULL,  
-    [OrderDateTime] [datetime] NULL,  
-    [TotalAmount] [decimal](18, 2) NULL,  
- CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED   
-(  
-    [OrderID] ASC  
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
-) ON [PRIMARY]  
-GO  
-
-    3. OrderDetails
- 
-CREATE TABLE [dbo].[OrderDetails](  
-    [RecordID] [int] IDENTITY(1,1) NOT NULL,  
-    [OrderID] [int] NULL,  
-    [ProductID] [int] NULL,  
-    [Quantity] [int] NULL,  
-    [Amount] [decimal](18, 2) NULL,  
- CONSTRAINT [PK_OrderDetails] PRIMARY KEY CLUSTERED   
-(  
-    [RecordID] ASC  
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
-) ON [PRIMARY]  
-GO  
+3. OrderDetails
+    CREATE TABLE [dbo].[OrderDetails](  
+        [RecordID] [int] IDENTITY(1,1) NOT NULL,  
+        [OrderID] [int] NULL,  
+        [ProductID] [int] NULL,  
+        [Quantity] [int] NULL,  
+        [Amount] [decimal](18, 2) NULL,  
+     CONSTRAINT [PK_OrderDetails] PRIMARY KEY CLUSTERED   
+    (  
+        [RecordID] ASC  
+    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
+    ) ON [PRIMARY]  
+    GO  
 
 3.	Cart
-
-CREATE TABLE [dbo].[Cart](  
-    [ID] [int] IDENTITY(1,1) NOT NULL,  
-    [ProductID] [int] NULL,  
-    [Quantity] [int] NULL,  
-    [Price] [decimal](18, 2) NULL,  
-    [Amount] [decimal](18, 2) NULL,  
-    [CartID] [nvarchar](50) NULL,  
- CONSTRAINT [PK_Cart] PRIMARY KEY CLUSTERED   
-(  
-    [ID] ASC  
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
-) ON [PRIMARY]  
-GO  
+    CREATE TABLE [dbo].[Cart](  
+        [ID] [int] IDENTITY(1,1) NOT NULL,  
+        [ProductID] [int] NULL,  
+        [Quantity] [int] NULL,  
+        [Price] [decimal](18, 2) NULL,  
+        [Amount] [decimal](18, 2) NULL,  
+        [CartID] [nvarchar](50) NULL,  
+     CONSTRAINT [PK_Cart] PRIMARY KEY CLUSTERED   
+    (  
+        [ID] ASC  
+    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
+    ) ON [PRIMARY]  
+    GO  
 
 Pages:
  
