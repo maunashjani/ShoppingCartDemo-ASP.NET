@@ -69,7 +69,7 @@ Pages:
 
 2. ProductDetails.aspx => On clicking Buy Now button next to the product on Home page the product details page opens up with all details of the product along with “Add To Cart” button and Quantity TextBox.
 
-<img src="https://raw.githubusercontent.com/maunashjani/ShoppingCartDemo/master/Products.png" alt="Products"/>
+<img style="text-align:center" src="https://raw.githubusercontent.com/maunashjani/ShoppingCartDemo/master/ProductDetails.png" alt="ProductDetails"/>
 
 3.  Cart.aspx => Displays the items currently in the cart along with a Checkout button to complete the order process.
 
