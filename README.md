@@ -65,14 +65,20 @@ Pages:
  
 1. Home.aspx => All Products are displayed here.
 
-<img src="https://raw.githubusercontent.com/maunashjani/ShoppingCartDemo/Home.png" alt="Home"/>
+<img src="https://raw.githubusercontent.com/maunashjani/ShoppingCartDemo/master/Home.png" alt="Home"/>
 
 2. ProductDetails.aspx => On clicking Buy Now button next to the product on Home page the product details page opens up with all details of the product along with “Add To Cart” button and Quantity TextBox.
 
+<img src="https://raw.githubusercontent.com/maunashjani/ShoppingCartDemo/master/Product.png" alt="Product"/>
+
 3.  Cart.aspx => Displays the items currently in the cart along with a Checkout button to complete the order process.
 
+<img src="https://raw.githubusercontent.com/maunashjani/ShoppingCartDemo/master/Cart.png" alt="Cart"/>
+
 4.  Account.aspx => Displays list of Orders and OrderDetails of the all the orders placed.
- 
+
+<img src="https://raw.githubusercontent.com/maunashjani/ShoppingCartDemo/master/Account.png" alt="Account"/>
+
 Note:
     
 1.	In this demonstration a Customer with CustomerID – 1 is used further modifications can be to select the currently logged in customer. 
