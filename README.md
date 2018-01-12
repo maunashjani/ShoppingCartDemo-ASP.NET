@@ -8,58 +8,34 @@ Tables:
 
 1.	Products
     CREATE TABLE [dbo].[Products](  
-        [ProductID] [int] IDENTITY(1,1) NOT NULL,  
+        [ProductID] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,  
         [ProductName] [nvarchar](50) NULL,  
         [Price] [decimal](18, 2) NULL,  
-        [ProductImage] [nvarchar](max) NULL,  
-     CONSTRAINT [PK_Products] PRIMARY KEY CLUSTERED   
-    (  
-        [ProductID] ASC  
-    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
-    ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]  
-    GO 
+        [ProductImage] [nvarchar](max) NULL)
  
 2.	Orders
     CREATE TABLE [dbo].[Orders](  
-        [OrderID] [int] IDENTITY(1,1) NOT NULL,  
+        [OrderID] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,    
         [CustomerID] [int] NULL,  
         [OrderDateTime] [datetime] NULL,  
-        [TotalAmount] [decimal](18, 2) NULL,  
-     CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED   
-    (  
-        [OrderID] ASC  
-    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
-    ) ON [PRIMARY]  
-    GO  
+        [TotalAmount] [decimal](18, 2) NULL)
 
 3. OrderDetails
     CREATE TABLE [dbo].[OrderDetails](  
-        [RecordID] [int] IDENTITY(1,1) NOT NULL,  
+        [RecordID] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
         [OrderID] [int] NULL,  
         [ProductID] [int] NULL,  
         [Quantity] [int] NULL,  
-        [Amount] [decimal](18, 2) NULL,  
-     CONSTRAINT [PK_OrderDetails] PRIMARY KEY CLUSTERED   
-    (  
-        [RecordID] ASC  
-    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
-    ) ON [PRIMARY]  
-    GO  
+        [Amount] [decimal](18, 2) NULL)
 
 3.	Cart
     CREATE TABLE [dbo].[Cart](  
-        [ID] [int] IDENTITY(1,1) NOT NULL,  
+        [ID] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,  
         [ProductID] [int] NULL,  
         [Quantity] [int] NULL,  
         [Price] [decimal](18, 2) NULL,  
         [Amount] [decimal](18, 2) NULL,  
-        [CartID] [nvarchar](50) NULL,  
-     CONSTRAINT [PK_Cart] PRIMARY KEY CLUSTERED   
-    (  
-        [ID] ASC  
-    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]  
-    ) ON [PRIMARY]  
-    GO  
+        [CartID] [nvarchar](50) NULL)
 
 Pages:
  
